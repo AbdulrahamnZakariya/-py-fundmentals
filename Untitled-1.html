@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أساسيات بايثون</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0 20px;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        h2 {
+            color: #2196F3;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>أساسيات بايثون</h1>
+
+    <h2>المتغيرات في بايثون</h2>
+    <p>المتغيرات هي رموز تُستخدم لتخزين البيانات في بايثون. يمكن إعطاء المتغيرات أسماء لتمثيل القيم المختلفة.</p>
+    <pre>
+x = 5
+name = "Python"
+print(x)
+print(name)
+    </pre>
+
+    <h2>أنواع البيانات البدائية في بايثون</h2>
+    <p>تتضمن أنواع البيانات البدائية في بايثون:</p>
+    <ul>
+        <li><strong>int:</strong> الأعداد الصحيحة</li>
+        <li><strong>float:</strong> الأعداد العشرية</li>
+        <li><strong>str:</strong> النصوص</li>
+        <li><strong>bool:</strong> القيم المنطقية (True أو False)</li>
+    </ul>
+    <pre>
+x = 10
+pi = 3.14
+name = "Python"
+is_valid = True
+    </pre>
+
+    <h2>العوامل في بايثون</h2>
+    <p>تُستخدم العوامل لتنفيذ العمليات الحسابية، المنطقية، والمقارنات. أمثلة:</p>
+    <ul>
+        <li>العوامل الحسابية: +, -, *, /</li>
+        <li>عوامل المقارنة: ==, !=, >, <</li>
+        <li>العوامل المنطقية: and, or, not</li>
+    </ul>
+
+    <h2>التعابير الشرطية</h2>
+    <p>تُستخدم التعابير الشرطية لتنفيذ الكود بناءً على شروط معينة.</p>
+    <pre>
+x = 10
+y = 20
+if x < y:
+    print("x أقل من y")
+else:
+    print("x أكبر من أو يساوي y")
+    </pre>
+
+    <h2>القوائم Lists</h2>
+    <p>القوائم هي بنية بيانات تُستخدم لتخزين مجموعات من العناصر.</p>
+    <pre>
+fruits = ["apple", "banana", "cherry"]
+print(fruits[0])  # apple
+    </pre>
+
+    <h2>الصفوف Tuples</h2>
+    <p>الصفوف تشبه القوائم، لكنها غير قابلة للتغيير.</p>
+    <pre>
+colors = ("red", "green", "blue")
+print(colors[1])  # green
+    </pre>
+
+    <h2>القواميس Dictionaries</h2>
+    <p>القواميس تخزن البيانات كأزواج مفتاح وقيمة.</p>
+    <pre>
+person = {"name": "John", "age": 30}
+print(person["name"])  # John
+    </pre>
+
+    <h2>الحلقات التكرارية</h2>
+    <p>تُستخدم الحلقات لتكرار الكود عدة مرات.</p>
+    <pre>
+for i in range(5):
+    print(i)
+
+# While loop
+x = 0
+while x < 5:
+    print(x)
+    x += 1
+    </pre>
+
+    <h2>بنى List Comprehension</h2>
+    <p>تُستخدم List Comprehension لتبسيط إنشاء القوائم.</p>
+    <pre>
+squares = [x**2 for x in range(5)]
+print(squares)
+    </pre>
+
+    <h2>الدوال Functions</h2>
+    <p>الدوال هي كتل من الكود تُستخدم لتنفيذ مهمة معينة.</p>
+    <pre>
+def greet(name):
+    return f"Hello, {name}!"
+
+print(greet("Alice"))
+    </pre>
+
+    <h2>حواشي الدوال Function Annotations</h2>
+    <p>تُستخدم حواشي الدوال لتوضيح أنواع المدخلات والمخرجات.</p>
+    <pre>
+def add(x: int, y: int) -> int:
+    return x + y
+
+print(add(5, 3))
+    </pre>
+
+    <h2>المزخرفات Decorators</h2>
+    <p>المزخرفات (Decorators) في بايثون هي ميزة قوية تُستخدم لتعديل وظائف أو طرق (functions or methods) دون تغيير الكود الأساسي لتلك الوظائف. تُعتبر المزخرفات دوال تأخذ دالة كإدخال وتُرجع دالة جديدة مع وظائف إضافية.</p>
+
+    <h3>أمثلة على المزخرفات</h3>
+
+    <h4>مثال 1: تنفيذ عمليات مختلفة على الأرقام</h4>
+    <pre>
+def inc(x):
+    return x + 1
+
+def dec(x):
+    return x - 1
+
+def calculate(operation, x):
+    return operation(x)
+
+print(calculate(inc, 5))  # Output: 6
+print(calculate(dec, 4))  # Output: 3
+    </pre>
+    <p>في هذا المثال، تُمرَّر دالة كوسيط لدالة أخرى لتطبيق عملية معينة.</p>
+
+    <h4>مثال 2: تنظيم استدعاء الدوال</h4>
+    <pre>
+def parent():
+    print('This is the parent function')
+
+def child1():
+    print('This is the child1 function')
+
+def child2():
+    print('This is the child2 function')
+
+child1()
+child2()
+parent()
+    </pre>
+    <p>هذا المثال يُظهر تنظيم استدعاءات الدوال وترتيب تنفيذها.</p>
+
+    <h4>مثال 3: المزخرفات مع الشروط</h4>
+    <pre>
+def vot(age):
+    def allow():
+        print('Person can vote')
+
+    def not_allow():
+        print('Person cannot vote')
+
+    if age > 18:
+        return allow()
+    else:
+        return not_allow()
+
+# Example usage:
+# vot(19)  # Output: Person can vote
+# vot(11)  # Output: Person cannot vote
+    </pre>
+    <p>في هذا المثال، بناء الدالة يعتمد على شرط معين لتحديد أي دالة يتم استدعاؤها.</p>
+
+    <h4>مثال 4: استخدام المزخرفات لإضافة تأثير بصري</h4>
+    <pre>
+def decorator(function):
+    def inner():
+        print("=" * 20)
+        function()
+        print("=" * 20)
+    return inner
+
+@decorator
+def write():
+    print("Hello, World!")
+
+write()
+    </pre>
+    <p>هذا المثال يُظهر كيف يمكن استخدام المزخرفات لإضافة تأثير بصري عند استدعاء الدالة.</p>
+
+</body>
+</html>
